@@ -1,0 +1,14 @@
+# Папка сборки
+build/
+# Файлы CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Служебные файлы редакторов/IDE
+.vscode/ !.vscode/tasks.json !.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~

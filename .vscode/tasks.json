@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cd /workspace && rm -rf build && mkdir -p build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug .. && make",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Очищает папку build, выполняет CMake и Make"
+    }
+  ]
+}
