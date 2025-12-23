@@ -7,7 +7,10 @@ RUN apt-get update && apt-get install -y \
     make \
     git \
     gdb \
+    wget \
+    libssl-dev \
     sudo \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Создайте пользователя 'vscode' с паролем и добавьте в sudo
@@ -19,3 +22,9 @@ WORKDIR /workspace
 
 # Переключитесь на пользователя vscode (опционально, можно оставить root для сборки)
 USER vscode
+
+# В .devcontainer/Dockerfile добавьте после установки базовых пакетов:
+RUN apt-get update && apt-get install -y \
+    # ... существующие пакеты ...
+    libssl-dev \           # Для HTTPS (если понадобится)
+    && rm -rf /var/lib/apt/lists/*
